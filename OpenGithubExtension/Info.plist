@@ -36,6 +36,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Open the file on Github</string>
 				</dict>
+                <dict>
+                    <key>XCSourceEditorCommandClassName</key>
+                    <string>$(PRODUCT_MODULE_NAME).OpenPRCommand</string>
+                    <key>XCSourceEditorCommandIdentifier</key>
+                    <string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenPRCommand</string>
+                    <key>XCSourceEditorCommandName</key>
+                    <string>Open PR of current line on Github</string>
+                </dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>$(PRODUCT_MODULE_NAME).SourceEditorExtension</string>
