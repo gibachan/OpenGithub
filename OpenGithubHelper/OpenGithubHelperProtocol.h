@@ -6,6 +6,8 @@
 // Replace the API of this protocol with an API appropriate to the service you are vending.
 - (void)openWith: (nonnull NSString*)line completion:(void (^)(void))completion;
 
+- (void)openPRWith: (nonnull NSString*)line completion:(void (^)(void))completion;
+
 @end
 
 /*

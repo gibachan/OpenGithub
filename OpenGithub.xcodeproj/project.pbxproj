@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0F2AB720B94990002DF0B5 /* open_pr_on_github.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F2AB620B94990002DF0B5 /* open_pr_on_github.rb */; };
 		A92C962320B20A0100BC2F43 /* OpenGithub.icns in Resources */ = {isa = PBXBuildFile; fileRef = A92C962220B20A0100BC2F43 /* OpenGithub.icns */; };
 		A97A689920B08B5900C60C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97A689820B08B5900C60C41 /* AppDelegate.swift */; };
 		A97A689B20B08B5900C60C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97A689A20B08B5900C60C41 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A0F2AB620B94990002DF0B5 /* open_pr_on_github.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = open_pr_on_github.rb; sourceTree = "<group>"; };
 		A92C962220B20A0100BC2F43 /* OpenGithub.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = OpenGithub.icns; sourceTree = "<group>"; };
 		A97A689520B08B5900C60C41 /* OpenGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97A689820B08B5900C60C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D0C84620B092E1007484EC /* open_xcode_file_on_github.rb */,
+				7A0F2AB620B94990002DF0B5 /* open_pr_on_github.rb */,
 				A97A68C220B08B8000C60C41 /* OpenGithubHelperProtocol.h */,
 				A97A68C320B08B8000C60C41 /* OpenGithubHelper.h */,
 				A97A68C420B08B8000C60C41 /* OpenGithubHelper.m */,
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D0C84720B092E1007484EC /* open_xcode_file_on_github.rb in Resources */,
+				7A0F2AB720B94990002DF0B5 /* open_pr_on_github.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +511,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenGithub/OpenGithub.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQ572MNR73;
+				DEVELOPMENT_TEAM = N8J7QL2Z3F;
 				INFOPLIST_FILE = OpenGithub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +532,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenGithub/OpenGithub.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQ572MNR73;
+				DEVELOPMENT_TEAM = N8J7QL2Z3F;
 				INFOPLIST_FILE = OpenGithub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,7 +551,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenGithubExtension/OpenGithubExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQ572MNR73;
+				DEVELOPMENT_TEAM = N8J7QL2Z3F;
 				INFOPLIST_FILE = OpenGithubExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -569,7 +573,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenGithubExtension/OpenGithubExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQ572MNR73;
+				DEVELOPMENT_TEAM = N8J7QL2Z3F;
 				INFOPLIST_FILE = OpenGithubExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,7 +594,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQ572MNR73;
+				DEVELOPMENT_TEAM = N8J7QL2Z3F;
 				INFOPLIST_FILE = OpenGithubHelper/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.cat-soft.OpenGithubHelper";
@@ -604,7 +608,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KQ572MNR73;
+				DEVELOPMENT_TEAM = N8J7QL2Z3F;
 				INFOPLIST_FILE = OpenGithubHelper/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.cat-soft.OpenGithubHelper";

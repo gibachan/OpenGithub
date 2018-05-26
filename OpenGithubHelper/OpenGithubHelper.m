@@ -15,4 +15,16 @@
     completion();
 }
 
+- (void)openPRWith: (nonnull NSString*)line completion:(void (^)(void))completion {
+    NSString *dir = [[NSBundle mainBundle] resourcePath];
+    NSString *scriptPath = [NSString stringWithFormat:@"%@/open_pr_on_github.rb", dir];
+    
+    NSTask *task  = [[NSTask alloc] init];
+    task.launchPath = @"/usr/bin/ruby";
+    task.arguments = @[scriptPath, line];
+    [task launch];
+    
+    completion();
+}
+
 @end
