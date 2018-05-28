@@ -2,13 +2,20 @@ import Foundation
 import XcodeKit
 
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
-    
-    func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
-        // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
+    func getHelper() -> OpenGithubHelperProtocol {
         let connection = NSXPCConnection(serviceName: "jp.cat-soft.OpenGithubHelper")
         connection.remoteObjectInterface = NSXPCInterface(with: OpenGithubHelperProtocol.self)
         connection.resume()
-        let helper = connection.remoteObjectProxy as! OpenGithubHelperProtocol
+        return connection.remoteObjectProxy as! OpenGithubHelperProtocol
+    }
+    
+    func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
+        fatalError("Should implement it in sub class")
+    }
+}
+
+class OpenGitHubCommand: SourceEditorCommand {
+    override func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         
         var line: String = ""
         let selections: [XCSourceTextRange]? = invocation.buffer.selections as? [XCSourceTextRange]
@@ -21,6 +28,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             }
         }
         
+        let helper = getHelper()
         let semaphore = DispatchSemaphore(value: 0)
         helper.open(with: line) {
             semaphore.signal()
@@ -28,17 +36,10 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         _ = semaphore.wait(timeout: .now() + 5)
         completionHandler(nil)
     }
-    
 }
 
-class OpenPRCommand: NSObject, XCSourceEditorCommand {
-    
-    func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
-        // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
-        let connection = NSXPCConnection(serviceName: "jp.cat-soft.OpenGithubHelper")
-        connection.remoteObjectInterface = NSXPCInterface(with: OpenGithubHelperProtocol.self)
-        connection.resume()
-        let helper = connection.remoteObjectProxy as! OpenGithubHelperProtocol
+class OpenPRCommand: SourceEditorCommand {
+    override func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         
         var line = 0
         let textBuffer = invocation.buffer
@@ -46,6 +47,7 @@ class OpenPRCommand: NSObject, XCSourceEditorCommand {
             line = selection.start.line + 1
         }
         
+        let helper = getHelper()
         let semaphore = DispatchSemaphore(value: 0)
         helper.openPR(with: String(line)) {
             semaphore.signal()
@@ -53,5 +55,4 @@ class OpenPRCommand: NSObject, XCSourceEditorCommand {
         _ = semaphore.wait(timeout: .now() + 5)
         completionHandler(nil)
     }
-    
 }
